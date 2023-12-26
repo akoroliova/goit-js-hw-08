@@ -1,0 +1,237 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #212121;
+  line-height: 1.5;
+}
+
+button {
+  border-style: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.gallery {
+  line-height: 0;
+  padding: 100px 156px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: 24px;
+  row-gap: 48px;
+  justify-content: center;
+}
+
+.gallery-image {
+  width: 360px;
+  height: 300px;
+  object-fit: cover;
+}
+
+#controls,
+#boxes {
+  background: #F6F6FE;
+  padding: 32px;
+  margin: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+#controls button[type="button"] {
+  display: flex;
+  width: 120px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  color: #FFF;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+}
+
+#controls button[data-destroy] {
+  background: #FF4E4E;
+}
+
+#controls button[data-create] {
+  background: #4E75FF;
+}
+
+#controls input[type="number"] {
+  display: flex;
+  padding: 8px 72px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px solid #808080;
+  color: #2E2F42;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button {
+  display: none;
+}
+
+.widget {
+  display: inline-flex;
+  padding: 100px 88px;
+  flex-direction: column;
+  background: #FFF;
+  align-items: center;
+  gap: 16px;
+}
+
+.widget p {
+  color: #2E2F42;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+}
+
+.change-color {
+  display: flex;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #4E75FF;
+  color: #FFF;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+}
+
+.login-form {
+  display: inline-flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.login-form label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  color: #2E2F42;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+}
+
+.login-form input {
+  display: flex;
+  width: 360px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form button {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: #4E75FF;
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+}
+
+#name-input {
+  width: 360px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  color: #2E2F42;
+  font-size: 16px;
+  letter-spacing: 0.64px;
+  padding-left: 16px;
+}
+
+.greeting {
+  color: #2E2F42;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.96px;
+}
+
+#categories {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  border-radius: 8px;
+  background: #FFF;
+}
+
+#categories .item {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  border-radius: 8px;
+  background: #F6F6FE;
+}
+
+#categories .item h2 {
+  color: #2E2F42;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.96px;
+  margin: 0px;
+}
+
+#categories .item ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0px;
+}
+
+#categories .item ul li {
+  display: flex;
+  align-items: center;
+  width: 360px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  color: #2E2F42;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+  padding-left: 16px;
+}
