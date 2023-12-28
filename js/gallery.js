@@ -84,8 +84,12 @@ images.map((image) => {
   aElement.appendChild(imgElement);
   liElement.appendChild(aElement);
   gallery.appendChild(liElement);
-
-  aElement.addEventListener("click", (event) => {
-    event.preventDefault();
-  });
 });
+
+const handleClick = (event) => {
+  event.preventDefault();
+
+  console.log(event.target.dataset.source);
+};
+
+gallery.addEventListener("click", handleClick);
