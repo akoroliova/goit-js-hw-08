@@ -93,9 +93,18 @@ const handleImageClick = (event) => {
   const originalAlt = event.target.alt;
 
   if (event.target.classList.contains("gallery-image")) {
-    basicLightbox
-      .create(`<img src="${originalUrl}" alt="${originalAlt}">`)
-      .show();
+    const lightbox = basicLightbox.create(
+      `<img src="${originalUrl}" alt="${originalAlt}">`
+    );
+
+    lightbox.show();
+
+    const handleEsc = (event) => {
+      if (event.key === "Escape") lightbox.close();
+      document.removeEventListener("keydown", handleEsc);
+    };
+
+    document.addEventListener("keydown", handleEsc);
   }
   return;
 };
