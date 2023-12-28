@@ -86,10 +86,18 @@ images.map((image) => {
   gallery.appendChild(liElement);
 });
 
-const handleClick = (event) => {
+const handleImageClick = (event) => {
   event.preventDefault();
 
-  console.log(event.target.dataset.source);
+  const originalUrl = event.target.dataset.source;
+  const originalAlt = event.target.alt;
+
+  if (event.target.classList.contains("gallery-image")) {
+    basicLightbox
+      .create(`<img src="${originalUrl}" alt="${originalAlt}">`)
+      .show();
+  }
+  return;
 };
 
-gallery.addEventListener("click", handleClick);
+gallery.addEventListener("click", handleImageClick);
