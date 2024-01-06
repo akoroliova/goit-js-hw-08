@@ -66,24 +66,9 @@ const images = [
 
 const gallery = document.querySelector("ul.gallery");
 
-images.map((image) => {
-  const liElement = document.createElement("li");
-  const aElement = document.createElement("a");
-  const imgElement = document.createElement("img");
-
-  liElement.classList.add("gallery-item");
-
-  aElement.classList.add("gallery-link");
-  aElement.href = image.original;
-
-  imgElement.classList.add("gallery-image");
-  imgElement.src = image.preview;
-  imgElement.dataset.source = image.original;
-  imgElement.alt = image.description;
-
-  aElement.appendChild(imgElement);
-  liElement.appendChild(aElement);
-  gallery.appendChild(liElement);
+images.forEach((image) => {
+  const liElement = `<li class="gallery-item"><a class="gallery-link" href="${image.original}"><img class="gallery-image" src="${image.preview}" data-source="${image.original}" alt="${image.description}" /></a></li>`;
+  gallery.insertAdjacentHTML("beforeend", liElement);
 });
 
 const handleImageClick = (event) => {
@@ -93,18 +78,23 @@ const handleImageClick = (event) => {
   const originalAlt = event.target.alt;
 
   if (event.target.classList.contains("gallery-image")) {
+    const handleEsc = (event) => {
+      if (event.key === "Escape") lightbox.close();
+    };
+
     const lightbox = basicLightbox.create(
-      `<img src="${originalUrl}" alt="${originalAlt}">`
+      `<img src="${originalUrl}" alt="${originalAlt}">`,
+      {
+        onShow: () => {
+          document.addEventListener("keydown", handleEsc);
+        },
+        onClose: () => {
+          document.removeEventListener("keydown", handleEsc);
+        },
+      }
     );
 
     lightbox.show();
-
-    const handleEsc = (event) => {
-      if (event.key === "Escape") lightbox.close();
-      document.removeEventListener("keydown", handleEsc);
-    };
-
-    document.addEventListener("keydown", handleEsc);
   }
   return;
 };
